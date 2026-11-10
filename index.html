@@ -212,16 +212,28 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
 .project-link{display:inline-flex;align-items:center;gap:9px;color:#c4b5fd;font-weight:700;font-size:.82rem}
 .project-link:hover{color:var(--cyan)}
 
+
 /* Project screenshot galleries */
-.project-gallery {
+.project-gallery-shell {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-preview.project-gallery {
+  height: 440px;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #8b5cf6 #111a2d;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   place-items: unset;
+}
+
+.project-gallery::-webkit-scrollbar {
+  display: none;
 }
 
 .project-slide {
@@ -231,9 +243,9 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
   height: 100%;
   margin: 0;
   scroll-snap-align: start;
-  background: #080e1c;
   display: grid;
   place-items: center;
+  background: #080e1c;
 }
 
 .project-slide img {
@@ -245,22 +257,56 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
 
 .project-slide figcaption {
   position: absolute;
-  bottom: 9px;
-  left: 12px;
-  padding: 5px 10px;
-  border-radius: 7px;
-  color: #fff;
+  bottom: 12px;
+  left: 14px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  color: white;
   background: #090d1acc;
-  font-size: .7rem;
+  font-size: .75rem;
   pointer-events: none;
 }
 
-.project-gallery-hint {
-  padding: 9px 16px;
-  color: var(--muted2);
-  font-size: .72rem;
-  text-align: right;
-  border-bottom: 1px solid var(--border);
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #090d1ad9;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.gallery-arrow:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.gallery-prev {
+  left: 13px;
+}
+
+.gallery-next {
+  right: 13px;
+}
+
+@media(max-width:700px) {
+  .project-preview.project-gallery {
+    height: 300px;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* Experience */
