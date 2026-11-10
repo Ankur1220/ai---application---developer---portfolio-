@@ -411,6 +411,172 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ABOUT ME SECTION */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-content h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.about-highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.about-highlight i {
+    color: var(--accent);
+    font-size: 17px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.about-stat-card {
+    padding: 28px 18px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, var(--surface), rgba(139, 92, 246, 0.07));
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-number {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* HOW I WORK SECTION */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.workflow-card {
+    position: relative;
+    padding: 26px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.workflow-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(139, 92, 246, 0.13);
+    color: var(--accent);
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.workflow-number {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.workflow-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.workflow-card p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .workflow-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        gap: 10px;
+    }
+
+    .about-stat-card {
+        padding: 20px 14px;
+    }
+
+    .stat-number {
+        font-size: 30px;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 </style>
 </head>
 
@@ -497,6 +663,84 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
     </div>
 
   </div>
+</section>
+
+<!-- ABOUT ME SECTION -->
+<section class="section about-section" id="about">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-tag">ABOUT ME</span>
+            <h2>Turning ideas into <span class="gradient-text">digital products.</span></h2>
+            <p>A little about my background, approach and the work I enjoy building.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Hi, I'm Ankur Singh.</h3>
+
+                <p>
+                    I'm an AI Application Developer and Full-Stack Developer
+                    interested in building practical web applications that
+                    solve real business problems.
+                </p>
+
+                <p>
+                    My experience spans frontend development, backend
+                    integrations, databases and role-based application
+                    workflows. I've contributed to projects involving
+                    AI-powered recruitment, resume generation, candidate
+                    matching and business process automation.
+                </p>
+
+                <p>
+                    I enjoy exploring new technologies, working with
+                    AI-assisted development tools and turning ideas into
+                    functional, user-friendly products.
+                </p>
+
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Full-Stack Development</span>
+                    </div>
+                    <div class="about-highlight">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>AI Application Development</span>
+                    </div>
+                    <div class="about-highlight">
+                        <i class="fa-solid fa-database"></i>
+                        <span>Backend & Database Integration</span>
+                    </div>
+                    <div class="about-highlight">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Product-Focused Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <div class="about-stat-card">
+                    <span class="stat-number">1+</span>
+                    <span class="stat-label">Years of Professional Experience</span>
+                </div>
+
+                <div class="about-stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Full-Stack Applications</span>
+                </div>
+
+                <div class="about-stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Role-Based Dashboards</span>
+                </div>
+
+                <div class="about-stat-card">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Months of AI Application Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- SKILLS -->
@@ -766,6 +1010,81 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
       <div class="experience-date">Oct 2025 – Present</div>
     </article>
   </div>
+</section>
+
+<!-- HOW I WORK SECTION -->
+<section class="section workflow-section" id="workflow">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-tag">MY APPROACH</span>
+            <h2>How I <span class="gradient-text">work.</span></h2>
+            <p>A practical approach to building, improving and delivering digital products.</p>
+        </div>
+
+        <div class="workflow-grid">
+
+            <div class="workflow-card">
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <span class="workflow-number">01</span>
+                <h3>Understand the Problem</h3>
+                <p>
+                    Understand the requirements, business needs and expected
+                    outcome before starting development.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <span class="workflow-number">02</span>
+                <h3>Plan & Structure</h3>
+                <p>
+                    Break the requirements into manageable features,
+                    workflows, interfaces and database requirements.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="workflow-number">03</span>
+                <h3>Build & Integrate</h3>
+                <p>
+                    Develop frontend interfaces, backend functionality,
+                    database operations and required integrations.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-bug-slash"></i>
+                </div>
+                <span class="workflow-number">04</span>
+                <h3>Test & Improve</h3>
+                <p>
+                    Test complete workflows, identify issues, debug
+                    functionality and improve the overall experience.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <div class="workflow-icon">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+                <span class="workflow-number">05</span>
+                <h3>Deploy & Deliver</h3>
+                <p>
+                    Deploy the application, verify its functionality
+                    and ensure the completed features work as expected.
+                </p>
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <!-- CONTACT -->
