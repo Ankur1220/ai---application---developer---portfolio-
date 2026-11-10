@@ -212,6 +212,57 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
 .project-link{display:inline-flex;align-items:center;gap:9px;color:#c4b5fd;font-weight:700;font-size:.82rem}
 .project-link:hover{color:var(--cyan)}
 
+/* Project screenshot galleries */
+.project-gallery {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #111a2d;
+  place-items: unset;
+}
+
+.project-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  background: #080e1c;
+  display: grid;
+  place-items: center;
+}
+
+.project-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-slide figcaption {
+  position: absolute;
+  bottom: 9px;
+  left: 12px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #fff;
+  background: #090d1acc;
+  font-size: .7rem;
+  pointer-events: none;
+}
+
+.project-gallery-hint {
+  padding: 9px 16px;
+  color: var(--muted2);
+  font-size: .72rem;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+
 /* Experience */
 .experience-card{
   max-width:850px;padding:29px;border:1px solid var(--border);
@@ -459,19 +510,34 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
     <div class="projects-grid">
 
       <article class="project-card reveal">
-        <div class="project-preview">
-          <div class="preview-window">
-            <div class="preview-bar"><span></span><span></span><span></span></div>
-            <div class="preview-content">
-              <div class="preview-side"></div>
-              <div class="preview-main">
-                <div class="preview-line short"></div>
-                <div class="preview-line"></div>
-                <div class="preview-line"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+<div class="project-preview project-gallery"
+     aria-label="Folkstrot dashboard screenshots"
+     tabindex="0">
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Folkstrot%20Candidate%20Dashboard.png"
+         alt="Folkstrot Candidate Dashboard"
+         loading="lazy">
+    <figcaption>Candidate Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Folkstrot%20Employer%20Dashboard.png"
+         alt="Folkstrot Employer Dashboard"
+         loading="lazy">
+    <figcaption>Employer Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Folkstrot%20Superadmin%20Dashboard.png"
+         alt="Folkstrot Superadmin Dashboard"
+         loading="lazy">
+    <figcaption>Superadmin Dashboard</figcaption>
+  </figure>
+
+</div>
+<div class="project-gallery-hint">Scroll or swipe to explore dashboards →</div>
 
         <div class="project-body">
           <div class="project-kicker">AI-powered recruitment platform</div>
@@ -492,19 +558,48 @@ h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
       </article>
 
       <article class="project-card reveal">
-        <div class="project-preview buyback">
-          <div class="preview-window">
-            <div class="preview-bar"><span></span><span></span><span></span></div>
-            <div class="preview-content">
-              <div class="preview-side"></div>
-              <div class="preview-main">
-                <div class="preview-line short"></div>
-                <div class="preview-line"></div>
-                <div class="preview-line"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+<div class="project-preview buyback project-gallery"
+     aria-label="Mobile Buyback dashboard screenshots"
+     tabindex="0">
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Store%20Owner%20Dashboard.png"
+         alt="Mobile Buyback Store Owner Dashboard"
+         loading="lazy">
+    <figcaption>Store Owner Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Valuation%20Dashboard.png"
+         alt="Mobile Buyback Valuation Dashboard"
+         loading="lazy">
+    <figcaption>Valuation Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Payment%20Dashboard.png"
+         alt="Mobile Buyback Payment Dashboard"
+         loading="lazy">
+    <figcaption>Payment Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Logistic%20Dashboard.png"
+         alt="Mobile Buyback Logistic Dashboard"
+         loading="lazy">
+    <figcaption>Logistic Dashboard</figcaption>
+  </figure>
+
+  <figure class="project-slide">
+    <img src="https://raw.githubusercontent.com/Ankur1220/ai---application---developer---portfolio-/main/Mobile%20App%20Dashboard.png"
+         alt="Mobile Buyback Mobile App Dashboard"
+         loading="lazy">
+    <figcaption>Mobile App Dashboard</figcaption>
+  </figure>
+
+</div>
+<div class="project-gallery-hint">Scroll or swipe to explore dashboards →</div>
 
         <div class="project-body">
           <div class="project-kicker">Full-stack business application</div>
