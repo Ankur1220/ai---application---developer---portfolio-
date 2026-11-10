@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d1a">
+<meta name="description" content="Ankur Singh S. — AI Application Developer building AI-powered and full-stack web applications.">
+<title>Ankur Singh S. | AI Application Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+  --bg:#090d1a;
+  --surface:#111a2d;
+  --surface2:#151f35;
+  --border:rgba(148,163,184,.16);
+  --text:#f8fafc;
+  --muted:#9aa8bf;
+  --muted2:#71809a;
+  --primary:#9b7bff;
+  --cyan:#22d3ee;
+  --green:#5eead4;
+  --container:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;color:var(--text);
+  background:
+    radial-gradient(circle at 82% 7%,rgba(128,88,245,.13),transparent 27rem),
+    radial-gradient(circle at 8% 38%,rgba(34,211,238,.07),transparent 25rem),
+    var(--bg);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.65;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  opacity:.13;
+  background-image:
+    linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);
+  background-size:54px 54px;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--container),calc(100% - 44px));margin:auto}
+.section{padding:100px 0}
+.section-head{max-width:680px;margin-bottom:40px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--cyan);text-transform:uppercase;
+  letter-spacing:.16em;font-size:.72rem;font-weight:700;
+}
+.eyebrow:before{content:"";width:22px;height:1px;background:currentColor}
+h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;line-height:1.12;margin:0}
+h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.045em;margin-top:14px}
+.section-head p{color:var(--muted);margin-top:16px}
+.gradient{
+  background:linear-gradient(100deg,#c4b5fd,#9b7bff,#67e8f9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* Navigation */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  border-bottom:1px solid transparent;transition:.25s;
+}
+.site-header.scrolled{
+  background:rgba(9,13,26,.9);
+  border-color:var(--border);backdrop-filter:blur(18px);
+}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;font:700 1rem "Space Grotesk"}
+.brand-mark,.footer-brand-mark{
+  width:36px;height:36px;display:grid;place-items:center;
+  border-radius:11px;background:linear-gradient(135deg,#8058f5,#4f46e5);
+}
+.nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:.88rem}
+.nav-links a:hover{color:white}
+.nav-contact{padding:10px 17px;border:1px solid #9b7bff80;border-radius:999px;color:#d9ccff}
+.menu-toggle{
+  display:none;width:42px;height:42px;border:1px solid var(--border);
+  border-radius:10px;background:var(--surface);color:white;cursor:pointer;
+}
+
+/* Hero */
+.hero{min-height:740px;padding:160px 0 90px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:55px}
+.availability{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 13px;
+  border:1px solid #5eead43b;border-radius:999px;
+  background:#5eead40f;color:#a7f3d0;font-size:.78rem;
+  font-weight:600;margin-bottom:25px;
+}
+.availability-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 5px #5eead41a;
+}
+.hero h1{font-size:clamp(3.1rem,6.1vw,5.5rem);letter-spacing:-.075em}
+.hero-role{margin-top:21px;color:#d6deed;font-size:1.25rem;font-weight:600}
+.hero-copy{max-width:610px;margin:17px 0;color:var(--muted);font-size:1.02rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{
+  min-height:48px;display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;padding:0 19px;border-radius:11px;font-size:.87rem;font-weight:700;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{
+  color:white;background:linear-gradient(110deg,#8b5cf6,#6d5dfc);
+  box-shadow:0 12px 30px #6d5dfc3d;
+}
+.btn-outline{border:1px solid var(--border);color:#e2e8f0;background:#111a2d8c}
+.btn-whatsapp{border:1px solid #25d36666;color:#a7f3c0;background:#25d36612}
+.btn-whatsapp:hover{border-color:#25d366}
+.hero-meta{display:flex;flex-wrap:wrap;gap:18px 22px;margin-top:35px;color:var(--muted2);font-size:.8rem}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta i{color:var(--primary)}
+
+/* Hero visual */
+.hero-visual{position:relative;min-height:410px;display:grid;place-items:center}
+.orb{
+  position:absolute;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c4b5fd4d,#8b5cf61f 45%,transparent 72%);
+  animation:float 7s ease-in-out infinite;
+}
+.visual-card{
+  position:relative;width:min(100%,365px);padding:25px;border-radius:25px;
+  border:1px solid #a78bfa47;
+  background:linear-gradient(145deg,#172038eb,#0d1324eb);
+  box-shadow:0 24px 70px #0005;transform:rotate(3deg);
+}
+.visual-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.74rem}
+.visual-icon{
+  width:60px;height:60px;margin:29px 0 19px;display:grid;place-items:center;
+  border-radius:18px;color:#ddd6fe;font-size:1.6rem;
+  background:linear-gradient(135deg,#8b5cf64d,#22d3ee21);
+}
+.visual-card h3{font-size:1.42rem}
+.visual-card p{color:var(--muted);font-size:.87rem;margin:9px 0 21px}
+.visual-tags{display:flex;flex-wrap:wrap;gap:8px}
+.visual-tags span,.tag{
+  padding:6px 10px;border-radius:999px;color:#c4b5fd;
+  border:1px solid #9b7bff33;background:#8b5cf614;
+  font-size:.7rem;font-weight:600;
+}
+.float-chip{
+  position:absolute;padding:11px 14px;border:1px solid var(--border);
+  border-radius:13px;background:#111a2df0;color:#dbeafe;
+  box-shadow:0 20px 55px #0005;font-size:.77rem;
+}
+.float-chip i{color:var(--cyan);margin-right:7px}
+.chip-one{top:35px;right:-2px;animation:float 6s infinite}
+.chip-two{bottom:43px;left:-12px;animation:float 7s infinite reverse}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.skill-card{
+  padding:24px;border:1px solid var(--border);border-radius:22px;
+  background:linear-gradient(145deg,#111a2de0,#0d1324c9);transition:.25s;
+}
+.skill-card:hover{border-color:#9b7bff70;transform:translateY(-4px)}
+.skill-title{display:flex;align-items:center;gap:12px;margin-bottom:17px}
+.skill-icon{
+  width:39px;height:39px;display:grid;place-items:center;
+  border-radius:12px;color:#c4b5fd;background:#8b5cf621;
+}
+.skill-title h3{font-size:1.03rem}
+.skill-list{display:flex;flex-wrap:wrap;gap:9px}
+.skill-list span{
+  color:#c1ccde;border:1px solid var(--border);
+  background:#ffffff08;padding:7px 11px;border-radius:8px;font-size:.77rem;
+}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project-card{
+  overflow:hidden;border:1px solid var(--border);border-radius:23px;
+  background:linear-gradient(155deg,#111a2df2,#0c1222f2);transition:.25s;
+}
+.project-card:hover{transform:translateY(-5px);border-color:#9b7bff70}
+.project-preview{
+  height:220px;position:relative;overflow:hidden;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 40%,#8b5cf640,transparent 65%),#111a2d;
+  border-bottom:1px solid var(--border);
+}
+.project-preview.buyback{background:radial-gradient(circle at 50% 40%,#22d3ee2b,transparent 65%),#111a2d}
+.preview-window{
+  width:78%;height:150px;padding:13px;border:1px solid #c4b5fd40;
+  border-radius:12px;background:#070c19c7;box-shadow:0 20px 55px #0005;
+  transform:perspective(800px) rotateX(5deg) rotateY(-7deg);
+}
+.preview-bar{display:flex;gap:4px;padding-bottom:10px;border-bottom:1px solid #94a3b820}
+.preview-bar span{width:5px;height:5px;border-radius:50%;background:#68758b}
+.preview-content{display:grid;grid-template-columns:32% 1fr;gap:9px;height:108px;padding-top:10px}
+.preview-side{border-radius:5px;background:linear-gradient(180deg,#8b5cf638,#8b5cf60a)}
+.buyback .preview-side{background:linear-gradient(180deg,#22d3ee38,#22d3ee0a)}
+.preview-main{display:grid;grid-template-rows:17px 1fr 1fr;gap:7px}
+.preview-line{border-radius:4px;background:#94a3b822}
+.preview-line.short{width:48%;background:#22d3ee40}
+.project-body{padding:24px}
+.project-kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.13em;font-size:.68rem;font-weight:700}
+.project-body h3{font-size:1.4rem;margin-top:9px}
+.project-body p{color:var(--muted);font-size:.88rem;margin:12px 0 17px}
+.project-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.project-stack span{color:#b9c6d9;background:#94a3b814;padding:5px 9px;border-radius:7px;font-size:.69rem}
+.project-link{display:inline-flex;align-items:center;gap:9px;color:#c4b5fd;font-weight:700;font-size:.82rem}
+.project-link:hover{color:var(--cyan)}
+
+/* Experience */
+.experience-card{
+  max-width:850px;padding:29px;border:1px solid var(--border);
+  border-radius:22px;background:linear-gradient(145deg,#111a2de6,#0d1324d1);
+  display:grid;grid-template-columns:1fr auto;gap:20px;
+}
+.experience-card h3{font-size:1.23rem}
+.company{color:#c4b5fd;font-weight:600;margin-top:7px}
+.experience-card p{color:var(--muted);margin:14px 0 0;font-size:.89rem}
+.experience-date{color:var(--muted2);font-size:.77rem;white-space:nowrap}
+.experience-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+
+/* Contact */
+.contact-panel{
+  padding:55px;border-radius:27px;border:1px solid #9b7bff40;
+  background:radial-gradient(circle at 90% 10%,#22d3ee1c,transparent 23rem),
+  linear-gradient(130deg,#221c42bf,#0f182bf2);box-shadow:0 24px 70px #0005;
+}
+.contact-panel h2{max-width:650px}
+.contact-panel p{color:var(--muted);max-width:570px;margin:17px 0 25px}
+.contact-links{display:flex;flex-wrap:wrap;gap:11px}
+.contact-link{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 15px;
+  border:1px solid var(--border);border-radius:11px;color:#dbe4f2;
+  background:#090d1a4d;font-size:.82rem;transition:.2s;
+}
+.contact-link:hover{border-color:#22d3ee73;color:var(--cyan);transform:translateY(-2px)}
+
+/* Footer */
+.site-footer{margin-top:20px;border-top:1px solid var(--border);background:#050913b8}
+.footer-main{
+  display:grid;grid-template-columns:1.4fr .8fr .8fr;
+  gap:55px;padding:55px 0 42px;
+}
+.footer-brand{display:inline-flex;align-items:center;gap:10px;font:700 1.12rem "Space Grotesk"}
+.footer-brand-mark{width:34px;height:34px;font-size:.8rem}
+.footer-about p{max-width:350px;color:var(--muted);font-size:.85rem;margin:15px 0 18px}
+.footer-socials{display:flex;gap:9px}
+.footer-socials a{
+  width:37px;height:37px;display:grid;place-items:center;border-radius:10px;
+  border:1px solid var(--border);color:#c4b5fd;background:#ffffff08;transition:.2s;
+}
+.footer-socials a:hover{color:var(--cyan);border-color:#22d3ee66;transform:translateY(-3px)}
+.footer-column h4{font-size:.9rem;margin:5px 0 17px}
+.footer-links{display:grid;gap:11px;color:var(--muted);font-size:.83rem}
+.footer-links a{width:fit-content;transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+.footer-contact-line{display:flex;align-items:center;gap:9px}
+.footer-contact-line i{width:15px;color:var(--primary)}
+.footer-bottom{
+  border-top:1px solid var(--border);padding:18px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  color:var(--muted2);font-size:.76rem;
+}
+.footer-bottom p{margin:0}
+.footer-credit{color:var(--muted)}
+.footer-credit span{color:#f0a4bd}
+
+/* Animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:25px}
+  .hero{padding-top:140px}
+  .hero-visual{min-height:360px}
+  .visual-card{max-width:340px}
+  .chip-one{right:8%}.chip-two{left:8%}
+  .footer-main{grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+}
+@media(max-width:700px){
+  .section{padding:76px 0}
+  .nav{height:70px}
+  .menu-toggle{display:grid;place-items:center}
+  .nav-links{
+    position:absolute;top:70px;left:0;right:0;display:none;
+    flex-direction:column;align-items:stretch;gap:0;padding:10px 22px 18px;
+    background:#090d1af7;border-bottom:1px solid var(--border);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0}
+  .nav-contact{text-align:center;margin-top:8px}
+  .hero{min-height:auto;padding:125px 0 65px}
+  .hero h1{font-size:clamp(2.8rem,13vw,4.3rem)}
+  .hero-actions{display:grid;grid-template-columns:1fr;max-width:290px}
+  .hero-actions .btn{width:100%}
+  .hero-meta{gap:12px 17px}
+  .skills-grid,.projects-grid{grid-template-columns:1fr}
+  .project-preview{height:205px}
+  .experience-card{grid-template-columns:1fr;padding:24px}
+  .experience-date{order:-1}
+  .contact-panel{padding:34px 25px}
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px 22px;padding:42px 0 32px}
+  .footer-about{grid-column:1/-1}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">AS</span>
+      <span>Ankur Singh<span class="gradient">.</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-content reveal">
+      <div class="availability">
+        <span class="availability-dot"></span>
+        Open to opportunities
+      </div>
+
+      <div class="eyebrow">AI application development</div>
+
+      <h1>Building useful products with <span class="gradient">AI & code.</span></h1>
+
+      <div class="hero-role">AI Application Developer · Full-Stack Developer</div>
+
+      <p class="hero-copy">
+        I build practical web applications by combining modern frontend development,
+        backend systems and AI model integrations. I enjoy turning complex workflows
+        into clear, reliable digital products.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a class="btn btn-primary" href="#projects">
+          <i class="fa-solid fa-arrow-right"></i> View my work
+        </a>
+
+        <a class="btn btn-outline" href="Ankur_Singh_AI_Application_Developer_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-regular fa-file-pdf"></i> View Resume
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+        <span><i class="fa-solid fa-code"></i> React · Next.js · Supabase</span>
+        <span><i class="fa-solid fa-globe"></i> Remote opportunities</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="orb"></div>
+      <div class="float-chip chip-one"><i class="fa-solid fa-brain"></i> AI integrations</div>
+
+      <div class="visual-card">
+        <div class="visual-top"><span>DEVELOPER PROFILE</span><span>● ● ●</span></div>
+        <div class="visual-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Ideas into <span class="gradient">applications.</span></h3>
+        <p>Building end-to-end web experiences with thoughtful interfaces, connected data and useful AI capabilities.</p>
+        <div class="visual-tags">
+          <span>Gemini API</span><span>Next.js</span><span>Supabase</span><span>PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="float-chip chip-two"><i class="fa-solid fa-database"></i> Full-stack workflows</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Technical toolkit</div>
+      <h2>Skills I use to <span class="gradient">build and ship.</span></h2>
+      <p>A practical combination of AI integration, frontend engineering, backend development and deployment tools.</p>
+    </div>
+
+    <div class="skills-grid">
+      <article class="skill-card reveal">
+        <div class="skill-title"><span class="skill-icon"><i class="fa-solid fa-brain"></i></span><h3>AI & LLM Integration</h3></div>
+        <div class="skill-list">
+          <span>Gemini API</span><span>LLM API Integration</span><span>AI Resume Generation</span>
+          <span>AI Job Matching</span><span>AI Recommendations</span><span>Prompt Design</span>
+        </div>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-title"><span class="skill-icon"><i class="fa-solid fa-laptop-code"></i></span><h3>Frontend Development</h3></div>
+        <div class="skill-list">
+          <span>React</span><span>Next.js</span><span>TypeScript</span><span>JavaScript</span>
+          <span>HTML</span><span>CSS</span><span>Tailwind CSS</span>
+        </div>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-title"><span class="skill-icon"><i class="fa-solid fa-server"></i></span><h3>Backend & Database</h3></div>
+        <div class="skill-list">
+          <span>Supabase</span><span>PostgreSQL</span><span>SQL</span><span>Edge Functions</span>
+          <span>Authentication</span><span>REST APIs</span>
+        </div>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-title"><span class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><h3>Tools & Integrations</h3></div>
+        <div class="skill-list">
+          <span>Google AI Studio</span><span>Brevo</span><span>Vercel</span><span>Git</span>
+          <span>GitHub</span><span>Shopify</span><span>WordPress</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Selected work</div>
+      <h2>Two projects. <span class="gradient">Real applications.</span></h2>
+      <p>A closer look at the applications I've contributed to building, integrating, testing and improving.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-preview">
+          <div class="preview-window">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-content">
+              <div class="preview-side"></div>
+              <div class="preview-main">
+                <div class="preview-line short"></div>
+                <div class="preview-line"></div>
+                <div class="preview-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-kicker">AI-powered recruitment platform</div>
+          <h3>Folkstrot</h3>
+          <p>
+            A talent mobility and recruitment platform with Gemini-powered resume generation,
+            candidate-job matching and job recommendations, alongside candidate, employer
+            and superadmin workflows.
+          </p>
+          <div class="project-stack">
+            <span>Next.js</span><span>React</span><span>TypeScript</span><span>Gemini API</span>
+            <span>Supabase</span><span>PostgreSQL</span><span>Vercel</span>
+          </div>
+          <a class="project-link" href="https://folkstrot.com/" target="_blank" rel="noopener noreferrer">
+            View live platform <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-preview buyback">
+          <div class="preview-window">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-content">
+              <div class="preview-side"></div>
+              <div class="preview-main">
+                <div class="preview-line short"></div>
+                <div class="preview-line"></div>
+                <div class="preview-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <div class="project-kicker">Full-stack business application</div>
+          <h3>Mobile Buyback Management System</h3>
+          <p>
+            A multi-role operational platform managing mobile intake, valuation, negotiation,
+            payments and courier logistics across five connected dashboards.
+          </p>
+          <div class="project-stack">
+            <span>Next.js</span><span>React</span><span>TypeScript</span><span>Supabase</span>
+            <span>PostgreSQL</span><span>Role-based access</span><span>Vercel</span>
+          </div>
+          <span class="project-link"><i class="fa-solid fa-diagram-project"></i> End-to-end workflow application</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Professional journey</div>
+      <h2>Experience that <span class="gradient">shapes my work.</span></h2>
+      <p>Professional development experience across web applications, ecommerce platforms and connected business systems.</p>
+    </div>
+
+    <article class="experience-card reveal">
+      <div>
+        <h3>Shopify Developer · AI Application Development</h3>
+        <div class="company">Fugensys Technologies</div>
+        <p>
+          Contributed to AI-enabled and full-stack web applications, implementing frontend
+          features, database operations, API integrations, authentication, notifications,
+          testing and debugging. Also worked on Shopify and WordPress development projects.
+        </p>
+        <div class="experience-tags">
+          <span class="tag">AI Application Development</span>
+          <span class="tag">Full-Stack Development</span>
+          <span class="tag">Shopify</span>
+          <span class="tag">WordPress</span>
+        </div>
+      </div>
+      <div class="experience-date">Oct 2025 – Present</div>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-panel reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Have an idea or project in mind? <span class="gradient">Let's connect.</span></h2>
+      <p>
+        I'm interested in opportunities to build useful AI-powered products and full-stack
+        applications with teams that value thoughtful engineering.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:ankursinghrathore81@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a>
+        <a class="contact-link" href="https://github.com/Ankur1220" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="contact-link" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-main">
+
+      <div class="footer-about">
+        <a class="footer-brand" href="#home">
+          <span class="footer-brand-mark">AS</span>
+          <span>Ankur Singh<span class="gradient">.</span></span>
+        </a>
+
+        <p>
+          AI Application Developer building practical AI-powered products
+          and full-stack web applications with modern technologies.
+        </p>
+
+        <div class="footer-socials">
+          <a href="https://github.com/Ankur1220" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="mailto:ankursinghrathore81@gmail.com" aria-label="Email">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#skills">Technical Skills</a>
+          <a href="#projects">Selected Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Get in touch</h4>
+        <div class="footer-links">
+          <a class="footer-contact-line" href="mailto:ankursinghrathore81@gmail.com">
+            <i class="fa-regular fa-envelope"></i> Email me
+          </a>
+          <a class="footer-contact-line" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a class="footer-contact-line" href="https://github.com/Ankur1220" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> GitHub profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Ankur Singh S. All rights reserved.</p>
+      <p class="footer-credit">Designed & developed with <span>♥</span> by Ankur Singh · AI Application Developer</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  // Navbar background on scroll
+  const siteHeader = document.getElementById("siteHeader");
+  const updateHeader = () => {
+    siteHeader.classList.toggle("scrolled", window.scrollY > 20);
+  };
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // Reveal elements on scroll
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+  } else {
+    document.querySelectorAll(".reveal").forEach(element => {
+      element.classList.add("visible");
+    });
+  }
+
+  // Dynamic footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
